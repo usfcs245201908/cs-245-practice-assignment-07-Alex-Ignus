@@ -1,7 +1,20 @@
-public class ArrayList<T> implements List<T> {
+import java.util.Arrays;
 
+public class ArrayList<T> implements List<T> {
+    private final Object array[];
+   
+    public ArrayList () {
+        array = new Object[10];
+    }
+    
+    public ArrayList (Object arr[]) {
+        array = Arrays.copyOf (arr, arr.length * 2);
+    }
+    
     @Override
-    public void add(T item) {
+    public void add(T item) throws Exception {
+    	if(array.length < 0 ){
+	    }
 
     }
 
@@ -24,4 +37,6 @@ public class ArrayList<T> implements List<T> {
     public int size() {
         return 0;
     }
+    
+    
 }

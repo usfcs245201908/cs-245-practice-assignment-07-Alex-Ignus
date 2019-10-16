@@ -73,7 +73,7 @@ public class Practice07Test {
 				"The Railway Children", "The Red Balloon", "Romeo + Juliet", "The Secret Garden",
 				"Show Me Love", "Singin' in the Rain", "Snow White and the Seven Dwarfs",
 				"Some Like It Hot", "The Spirit of the Beehive", "Spirited Away", "Star Wars",
-				"To Kill a Mockingbird", "Toy Story", "Walkabout", "Whale Rider", 
+				"To Kill a Mockingbird", "Toy Story", "Walkabout", "Whale Rider",
 				"Where Is the Friend's Home?", "Whistle Down the Wind", "The White Balloon",
 				"The Wizard of Oz"};
 		try {
