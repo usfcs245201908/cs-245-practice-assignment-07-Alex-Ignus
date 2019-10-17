@@ -20,6 +20,7 @@ public class LinkedList<T> implements List {
         nextNode.next = null;
         if(head == null){
             head = nextNode;
+            size++;
         }else{
             Node lastElement = head;
             while(lastElement.next != null){
@@ -33,13 +34,13 @@ public class LinkedList<T> implements List {
     @Override
     public void add(int pos, Object item) {
         Node nextNode = new Node(item);
-        System.out.println(nextNode.data + " The node to insert and its Data");
         nextNode.next = null;
-        int i = 0;
-        if(pos < 0 || pos>= size()){
+        System.out.println("pos of the element: " + pos + " The element: " + item);
 
-        }else if(head == null && pos == 0){
+        int i = 0;
+        if(head == null && pos == 0){
             head = nextNode;
+            System.out.println("After head assignment to nextNode: " + head.data);
             size++;
         }else{
             Node lastElement = head;
@@ -73,7 +74,40 @@ public class LinkedList<T> implements List {
 
     @Override
     public Object remove(int pos) {
-        return null;
+        // If linked list is empty
+        if (head == null)
+            return null;
+
+        // Store head node
+        Node temp = head;
+
+        // If head needs to be removed
+        if (pos == 0)
+        {
+            size--;
+            head = temp.next;   // Change head
+            return temp.data;
+        }
+
+        // Find previous node of the node to be deleted
+        for (int i=0; temp!=null && i<pos-1; i++) {
+            temp = temp.next;
+        }
+
+        // If position is more than number of ndoes
+        if ((temp == null) || (temp.next == null)) {
+            return null;
+        }
+
+        // Node temp->next is the node to be deleted
+        // Store pointer to the next of node to be deleted
+        Node next = temp.next.next;
+
+        Node removed = temp.next;
+        temp.next = next;  // Unlink the deleted node from list
+        size--;
+        return removed.data;
+
     }
 
     @Override
