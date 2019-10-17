@@ -1,4 +1,4 @@
-public class LinkedList implements List {
+public class LinkedList<T> implements List {
     @Override
     public void add(Object item) {
 
