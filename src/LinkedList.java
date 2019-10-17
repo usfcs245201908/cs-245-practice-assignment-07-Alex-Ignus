@@ -35,12 +35,10 @@ public class LinkedList<T> implements List {
     public void add(int pos, Object item) {
         Node nextNode = new Node(item);
         nextNode.next = null;
-        System.out.println("pos of the element: " + pos + " The element: " + item);
 
         int i = 0;
         if(head == null && pos == 0){
             head = nextNode;
-            System.out.println("After head assignment to nextNode: " + head.data);
             size++;
         }else{
             Node lastElement = head;
