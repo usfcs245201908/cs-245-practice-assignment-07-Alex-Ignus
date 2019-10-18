@@ -6,10 +6,6 @@ public class LinkedList<T> implements List {
     class Node {
         Object data;
         Node next;
-
-        // Constructor to create a new node
-        // Next is by default initialized
-        // as null
         Node(Object d) { data = d; }
     }
 
@@ -77,32 +73,32 @@ public class LinkedList<T> implements List {
             return null;
 
         // Store head node
-        Node temp = head;
+        Node tempNode = head;
 
         // If head needs to be removed
         if (pos == 0)
         {
             size--;
-            head = temp.next;   // Change head
-            return temp.data;
+            head = tempNode.next;   // Change head
+            return tempNode.data;
         }
 
         // Find previous node of the node to be deleted
-        for (int i=0; temp!=null && i<pos-1; i++) {
-            temp = temp.next;
+        for (int i=0; tempNode!=null && i<pos-1; i++) {
+            tempNode = tempNode.next;
         }
 
         // If position is more than number of ndoes
-        if ((temp == null) || (temp.next == null)) {
+        if ((tempNode == null) || (tempNode.next == null)) {
             return null;
         }
 
-        // Node temp->next is the node to be deleted
+        // Node tempNode->next is the node to be deleted
         // Store pointer to the next of node to be deleted
-        Node next = temp.next.next;
+        Node next = tempNode.next.next;
 
-        Node removed = temp.next;
-        temp.next = next;  // Unlink the deleted node from list
+        Node removed = tempNode.next;
+        tempNode.next = next;  // Unlink the deleted node from list
         size--;
         return removed.data;
 
